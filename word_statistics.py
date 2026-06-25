@@ -7,6 +7,8 @@ def word_statistics(string: str) -> dict:
 
     string = string.lower()
     dic = {}
+    for sym in ",.;:'\"?!-()[]{}":
+        string = string.replace(sym, "")
     for word in string.split():
         if word in dic:
             dic[word] += 1
